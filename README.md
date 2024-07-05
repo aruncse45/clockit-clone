@@ -1,36 +1,150 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ClockIt Clone Next.js
+
+## Overview
+
+ClockIt Clone Next.js is an employee time logging application built using Next.js 14. This application supports two types of roles: admin and user. Employees can log in with their company email address, punch in when they enter the office, and punch out when they leave. Multiple punch ins and outs are supported within the same day. Additionally, employees can request corrections for their punch times.
+
+## Features
+
+- **User Authentication**: Employees can log in using their company email addresses.
+- **Punch In/Out**: Employees can punch in and out multiple times a day.
+- **Correction Requests**: Employees can request corrections for their punch times.
+- **Admin Role**: Admins can approve/reject correction requests.
+
+## Tech Stack
+
+- **Framework**: Next.js 14
+- **UI Library**: Shadcn UI
+- **Database**: PostgreSQL (with Drizzle ORM)
+- **Authentication**: NextAuth.js
+- **Forms**: React Hook Form with Zod for validation
+- **Styling**: Tailwind CSS
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Node.js**: >= 18.17.0
+- **Yarn**: >= 1.22.17
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   ```bash
+   git clone https://github.com/yourusername/clockit-clone-nextjs.git
+   cd clockit-clone-nextjs
+   ```
 
-## Learn More
+2. Install dependencies:
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   yarn install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Set up environment variables:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   Create a `.env` file in the root directory and add the required environment variables mentioned in `.env.example` file.
 
-## Deploy on Vercel
+4. Run database migrations and seed the database:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   yarn db:generate
+   yarn db:migrate
+   yarn db:seed
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Running the Application
+
+- Development mode:
+
+  ```bash
+  yarn dev
+  ```
+
+- Production mode:
+
+  ```bash
+  yarn build
+  yarn start
+  ```
+
+### Linting and Formatting
+
+- Lint the code:
+
+  ```bash
+  yarn lint
+  ```
+
+- Format the code:
+
+  ```bash
+  yarn format
+  ```
+
+## Scripts
+
+- **`dev`**: Starts the development server.
+- **`build`**: Builds the application for production.
+- **`start`**: Starts the production server.
+- **`lint`**: Lints the code using ESLint.
+- **`format`**: Formats the code using Prettier.
+- **`prepare`**: Sets up Husky for Git hooks.
+- **`db:generate`**: Generates database migrations.
+- **`db:migrate`**: Applies database migrations.
+- **`db:seed`**: Seeds the database with initial data.
+- **`test:e2e:dev`**: Runs end-to-end tests using Playwright in development mode.
+
+## Dependencies
+
+- `@hookform/resolvers`
+- `@radix-ui/react-*`
+- `class-variance-authority`
+- `clsx`
+- `date-fns`
+- `drizzle-orm`
+- `google-auth-library`
+- `lucide-react`
+- `next`
+- `next-auth`
+- `postgres`
+- `react`
+- `react-day-picker`
+- `react-dom`
+- `react-hook-form`
+- `react-time-picker`
+- `tailwind-merge`
+- `tailwindcss-animate`
+- `zod`
+
+## Dev Dependencies
+
+- `@commitlint/cli`
+- `@commitlint/config-conventional`
+- `@next/eslint-plugin-next`
+- `@playwright/test`
+- `@types/node`
+- `@types/pg`
+- `@types/react`
+- `@types/react-dom`
+- `@types/uuid`
+- `@typescript-eslint/eslint-plugin`
+- `dotenv`
+- `drizzle-kit`
+- `eslint`
+- `eslint-config-next`
+- `eslint-config-prettier`
+- `husky`
+- `lint-staged`
+- `pg`
+- `postcss`
+- `prettier`
+- `prettier-plugin-tailwindcss`
+- `tailwindcss`
+- `typescript`
+- `uuid`
+
+## Contact
+
+For any inquiries, please reach out to Arun Kundu at arunkundu45837@gmail.com.
